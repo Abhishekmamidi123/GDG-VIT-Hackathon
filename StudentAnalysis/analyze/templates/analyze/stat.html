@@ -1,0 +1,110 @@
+<style>
+#chartdiv
+{
+  margin-left: 400px;
+  width: 50%;
+  height: 500px;
+  background-color: F5F5F5;
+}
+
+.asd
+{
+    background-color: AB987A;
+    margin-left: 100px;
+    margin-right: 120px;
+    margin-top: 20px;
+}
+</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Bar Chart code -->
+<script>
+
+var chart = AmCharts.makeChart("chartdiv", {
+    "theme": "light",
+    "type": "serial",
+    "startDuration": 2,
+    "dataProvider": [{
+        "aspect": "Attendance",
+        "weight": 87,
+        "color": "#FF0F00"
+    }, {
+        "aspect": "Workshops",
+        "weight": 75,
+        "color": "#FF6600"
+    }, {
+        "aspect": "Interns Completed",
+        "weight": 75,
+        "color": "#FF9E01"
+    }, {
+        "aspect": "Club participation",
+        "weight": 22,
+        "color": "#F8FF01"
+    }, {
+        "aspect": "Additional works",
+        "weight": 57,
+        "color": "#B0DE09"
+    }, ],
+
+    "valueAxes": [{
+        "position": "left",
+        "axisAlpha":0,
+        "gridAlpha":0,
+        "labelsEnabled": true,
+        "title":"Weightage gained in percentage :"
+    }],
+
+    "graphs": [{
+        "balloonText": "[[category]]: <b>[[value]]</b>",
+        "colorField": "color",
+        "fillAlphas": 0.85,
+        "lineAlpha": 0.1,
+        "type": "column",
+        "topRadius":0.75,
+        "valueField": "weight",
+    }],
+
+    "depth3D": 40,
+	"angle": 30,
+    "chartCursor": {
+        "categoryBalloonEnabled": false,
+        "cursorAlpha": 0,
+        "zoomable": true
+    },
+
+    "categoryField": "aspect",
+
+    "categoryAxis": {
+        "gridPosition": "start",
+        "axisAlpha":0,
+        "gridAlpha":0,
+        "labelsEnabled": true,
+        "title": "Aspects of assessing",
+
+    },
+
+    "export": {
+    	"enabled": true,
+     }
+}, 0);
+
+</script>
+<!-- HTML Page Layout -->
+<!-- <div style="background-color:0F1626;margin-left:70px" class="jumbotron"></div>-->
+<div class="asd">
+    <br>
+<h1 class="jumbotron" style="background-color:0F1626; margin-left:40px; margin-right:90px; color:azure; padding-left:20px; padding-bottom:20px;" >
+    <center> Mr.Shahrukh Khan</center></h1>
+<div id="chartdiv" style="padding-bottom:30px"></div>
+<br>
+<br>
+</div>

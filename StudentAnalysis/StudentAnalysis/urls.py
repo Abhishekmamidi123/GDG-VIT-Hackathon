@@ -23,4 +23,5 @@ urlpatterns = [
     url(r"^thanks/$", views.ThanksPage.as_view(), name="thanks"),
     url(r'^admin/', admin.site.urls),
     url(r"^accounts/", include("accounts.urls", namespace="accounts")),
+    url(r"^analyze/", include("analyze.urls", namespace="analyze")),
 ]

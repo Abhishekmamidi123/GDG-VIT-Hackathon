@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-top:20%;margin-left:50%">
+  <a href="{% url 'analyze:year1' %}"><button class="btn1 button1"> UG1 </button></a>
+  <br>
+  <a href="{% url 'analyze:year2' %}"><button class="btn1 button2"> UG2 </button></a>
+  <br>
+  <a href="{% url 'analyze:year3' %}"><button class="btn1 button3"> UG3 </button></a>
+  <br>
+  <a href="{% url 'analyze:year4' %}"><button class="btn1 button4"> UG4 </button></a>
+  <br>
+  </div>
+{% endblock %}
