@@ -6,7 +6,6 @@
   height: 500px;
   background-color: F5F5F5;
 }
-
 .asd
 {
     background-color: AB987A;
@@ -15,7 +14,6 @@
     margin-top: 20px;
 }
 </style>
-
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
@@ -29,29 +27,31 @@
 <!-- Bar Chart code -->
 <script>
 
+var obj = {{list1|safe}};
+console.log(obj[0]);
 var chart = AmCharts.makeChart("chartdiv", {
     "theme": "light",
     "type": "serial",
     "startDuration": 2,
     "dataProvider": [{
-        "aspect": "Attendance",
-        "weight": 87,
+        "aspect": "Academic score",
+        "weight": parseInt(obj['1']),
         "color": "#FF0F00"
     }, {
         "aspect": "Workshops",
-        "weight": 75,
+        "weight": obj['2']*100/4,
         "color": "#FF6600"
     }, {
         "aspect": "Interns Completed",
-        "weight": 75,
+        "weight": obj['3']*100/2,
         "color": "#FF9E01"
     }, {
         "aspect": "Club participation",
-        "weight": 22,
+        "weight": obj['4']*100/3,
         "color": "#F8FF01"
     }, {
         "aspect": "Additional works",
-        "weight": 57,
+        "weight": obj['5']*100/2,
         "color": "#B0DE09"
     }, ],
 
@@ -61,7 +61,7 @@ var chart = AmCharts.makeChart("chartdiv", {
         "gridAlpha":0,
         "labelsEnabled": true,
         "title":"Weightage gained in percentage :"
-    }],
+    } ],
 
     "graphs": [{
         "balloonText": "[[category]]: <b>[[value]]</b>",
@@ -103,7 +103,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 <div class="asd">
     <br>
 <h1 class="jumbotron" style="background-color:0F1626; margin-left:40px; margin-right:90px; color:azure; padding-left:20px; padding-bottom:20px;" >
-    <center> Mr.Shahrukh Khan</center></h1>
+    <center> {{name}} </center></h1>
 <div id="chartdiv" style="padding-bottom:30px"></div>
 <br>
 <br>

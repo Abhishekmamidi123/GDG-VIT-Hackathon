@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <center>
+    <div class="jumbotron">
+        <h1>Overall Class Analysis:</h1>
+    </div>
+    </center>
+    <br>
+    <div class="">
+        <table style="width:100%">
+            <tr>
+                <th>Aspect</th>
+                <th>Performance of the class(in %)</th>
+            </tr>
+            <tr>
+                <td>Academic Performance:</td>
+                <td>{{ avg }}</td>
+            </tr>
+            <tr>
+                <td>Workshops:</td>
+                <td>{{ wavg }}</td>
+            </tr>
+            <tr>
+                <td>Internships:</td>
+                <td>{{ iavg }}</td>
+            </tr>
+            <tr>
+                <td>Club participation:</td>
+                <td>{{ cavg }}</td>
+            </tr>
+            <tr>
+                <td>Additional contribution:</td>
+                <td>{{ aavg }}</td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

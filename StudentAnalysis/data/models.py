@@ -12,5 +12,5 @@ class Student(models.Model):
     interns = models.IntegerField()
     workshops = models.IntegerField()
     clubs = models.IntegerField()
-    attendance = models.FloatField()
+    score = models.FloatField()
     eventsorganized = models.IntegerField()

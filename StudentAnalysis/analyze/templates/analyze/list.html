@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <center> <h1>List of {{year}} year students</h1><br>
+        <a href="{% url 'analyze:classanalysis' year=year %}"><button class="btn btn-info btn-lg" type="button" name="button">Class Analysis</button></center></a>
+    </div>
+    <div class="">
+        {% for i in list %}
+            <div class="alert alert-info" role="alert"><a href="{% url 'analyze:stat' year=i.year rollno=i.rollno %}"><center><button class="btn btn-success" type="button" name="button">{{i.name}}</button></center></a></div>
+        {% endfor %}
+    </div>
+{% endblock %}
